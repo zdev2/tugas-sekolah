@@ -1,0 +1,50 @@
+.box {
+  width: 10rem;
+  height: 10rem;
+  background-color: aqua;
+}
+
+body {
+  width: 130rem;
+}
+
+.box-container {
+}
+
+.box-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.box-evenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+.box-around {
+  display: flex;
+  justify-content: space-around;
+}
+.box-center {
+  display: flex;
+  justify-content: center;
+}
+
+.a2 {
+  margin: auto 10rem;
+}
+
+.a3 {
+  margin: auto 20rem;
+}
+
+.a4 {
+  margin: auto 30rem;
+}
+
+.a5 {
+  margin: auto 40rem;
+}
+
+.a6 {
+  margin: auto 50rem;
+}
