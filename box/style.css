@@ -15,6 +15,20 @@
   font-size: 5rem;
   color: white;
 }
+.box2 {
+  width: 10rem;
+  height: 10rem;
+  background-color: rgb(5, 193, 2);
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  border-radius: 1rem;
+  align-content: center;
+  text-align: center;
+  font-size: 5rem;
+  color: white;
+}
 body {
   width: 70rem;
 }
