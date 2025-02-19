@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   if (container) {
     for (let i = 1; i <= numberOfItems; i++) {
       const box = document.createElement("a");
-      box.href = `/picture-details.html?id=${i}`;
+      box.href = `/tugas-sekolah/picture-details.html?id=${i}`;
       box.classList.add("box");
 
       const img = document.createElement("img");
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   } else if (container2) {
     for (let i = 1; i <= numberOfItems2; i++) {
       const box = document.createElement("a");
-      box.href = `/picture-details.html?id=${i}`;
+      box.href = `/tugas-sekolah/picture-details.html?id=${i}`;
       box.classList.add("box");
 
       const img = document.createElement("img");
