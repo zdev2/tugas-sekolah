@@ -3,20 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Thing</title>
+    <title>Home</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <nav>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="#">Jurusan</a></li>
+        <li><a href="/index.html">Home</a></li>
         <li><a href="/gallery.html">Gallery</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
       </ul>
     </nav>
-    <div id="box-container-gallery" class="box-container-gallery"></div>
-    <footer>Some footer here.</footer>
+    <section id="hero">
+      <div class="bg-img"></div>
+    </section>
+    <div class="h1">Gallery</div>
+    <section id="gallery">
+      <div id="box-container-gallery" class="box-container-gallery"></div>
+    </section>
+    <footer>footer here.</footer>
+    <script type="module" src="photos.js"></script>
   </body>
-  <script src="photos.js"></script>
 </html>

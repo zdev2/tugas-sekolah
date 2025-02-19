@@ -2,35 +2,68 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-nav {
-  position: sticky;
-  top: 0;
-  padding: 1rem;
-  background-color: #0b80aa;
+.bg-img {
+  /* The image used */
+  background-image: url("https://fastly.picsum.photos/id/971/1920/1080.jpg?hmac=SDH1lXJUqWI8rJ41Yr7PvKW1aAA-nj559Z2DU888BA8");
+
+  min-height: 380px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Needed to position the navbar */
+  position: relative;
+  /* margin-bottom: 0.5rem; */
+}
+
+/* Position the navbar container inside the image */
+/* .navbar-container {
+  position: absolute;
+  margin: 20px;
+  width: auto;
+} */
+
+/* The navbar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
 nav ul {
   display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
+  gap: 5px;
+  right: 2rem;
+  top: 2.9%;
+  position: absolute;
   list-style: none;
 }
 
-nav ul li a {
-  color: white;
-  font-weight: 500;
-  text-decoration: none;
+nav {
+  padding: 1rem;
 }
 
-.bg-img {
-  width: 100vw;
-  height: 30rem;
-  background-size: cover;
-  background-image: url(https://fastly.picsum.photos/id/781/1920/1080.jpg?hmac=x683ZyqISoCG5WBrmxMqfqeA5_5LLC8V8w96qJSxxok);
+li a {
+  color: #000;
+  text-decoration: none;
 }
 
 .box-container {
@@ -115,40 +148,12 @@ img {
   padding: 16px 32px;
 }
 
-.h1 {
-  padding: 1rem;
-  text-align: center;
-  font-size: 3rem;
-  font-weight: 600;
-}
-
-.box-text-container {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-  padding: 1rem;
-}
-
-.box-text-container img {
-  width: 45%;
-  -webkit-filter: drop-shadow(0.2rem 0.2rem 0.2rem);
-  filter: drop-shadow(0.2rem 0.2rem 0.2rem);
-}
-
-#about {
-  text-align: justify;
-  padding: 1rem 20vw;
-}
-
-#contact {
-  padding: 2rem;
-  text-align: center;
-  font-size: 6rem;
-}
-
 footer {
-  padding: 1rem;
-  background-color: #0b80aa;
-  color: #ffffff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
   text-align: center;
+  padding: 10px;
 }

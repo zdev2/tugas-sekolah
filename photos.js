@@ -1,16 +1,21 @@
-document.addEventListener("DOMContentLoaded", function () {
+import { fetchImageDetails } from "./modules/fetchImageDetails.js";
+
+document.addEventListener("DOMContentLoaded", async function () {
   const container = document.getElementById("box-container");
   const container2 = document.getElementById("box-container-gallery");
-  const numberOfItems = 50;
+  const text_container = document.getElementById("box-text-container");
+  const numberOfItems = 20;
+  const numberOfItems2 = 50;
 
   if (container) {
     for (let i = 1; i <= numberOfItems; i++) {
-      const box = document.createElement("div");
+      const box = document.createElement("a");
+      box.href = `/picture-details.html?id=${i}`;
       box.classList.add("box");
 
       const img = document.createElement("img");
       img.classList.add("imgs");
-      img.src = `https://picsum.photos/300/200?random=${i}`;
+      img.src = `https://picsum.photos/id/${i + 50}/300/200`;
       img.alt = "Random Image";
 
       const middle = document.createElement("div");
@@ -26,13 +31,14 @@ document.addEventListener("DOMContentLoaded", function () {
       container.appendChild(box);
     }
   } else if (container2) {
-    for (let i = 1; i <= numberOfItems; i++) {
-      const box = document.createElement("div");
+    for (let i = 1; i <= numberOfItems2; i++) {
+      const box = document.createElement("a");
+      box.href = `/picture-details.html?id=${i}`;
       box.classList.add("box");
 
       const img = document.createElement("img");
       img.classList.add("imgs");
-      img.src = `https://picsum.photos/600/400?random=${i}`;
+      img.src = `https://picsum.photos/id/${i + 50}/600/400`;
       img.alt = "Random Image";
 
       const middle = document.createElement("div");
@@ -46,6 +52,42 @@ document.addEventListener("DOMContentLoaded", function () {
       box.appendChild(img);
       box.appendChild(middle);
       container2.appendChild(box);
+    }
+  } else if (text_container) {
+    const params = new URLSearchParams(window.location.search);
+    const imageId = parseInt(params.get("id"), 10) + 50;
+    const textContainer = document.getElementById("box-text-container");
+
+    if (imageId && textContainer) {
+      const data = await fetchImageDetails(imageId);
+      if (data) {
+        const img = document.createElement("img");
+        img.src = `https://picsum.photos/id/${imageId}/600/400`;
+        img.alt = `Image by ${data.author}`;
+        img.style.maxWidth = "100%";
+
+        const text_container = document.createElement("div");
+        text_container.classList.add("text-container");
+
+        const title = document.createElement("h2");
+        title.textContent = `Image by ${data.author}`;
+
+        const dimensions = document.createElement("p");
+        dimensions.textContent = `Size: ${data.width} x ${data.height}`;
+
+        const sourceLink = document.createElement("a");
+        sourceLink.href = data.url;
+        sourceLink.textContent = "View Original Source";
+        sourceLink.target = "_blank";
+
+        textContainer.appendChild(img);
+        text_container.appendChild(title);
+        text_container.appendChild(dimensions);
+        text_container.appendChild(sourceLink);
+        textContainer.appendChild(text_container);
+      } else {
+        textContainer.textContent = "Failed to load image details.";
+      }
     }
   }
 });
