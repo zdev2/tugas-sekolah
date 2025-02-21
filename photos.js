@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       const img = document.createElement("img");
       img.classList.add("imgs");
-      img.src = `https://picsum.photos/id/${i + 10}/600/400`;
+      img.src = `https://picsum.photos/id/${i + 10}/300/200`;
       img.alt = "Random Image";
 
       const middle = document.createElement("div");
@@ -56,10 +56,6 @@ document.addEventListener("DOMContentLoaded", async function () {
       if (imageId && box2) {
         const data = await fetchImageDetails(imageId);
         if (data) {
-          const img = document.createElement("img");
-          img.src = `https://picsum.photos/id/${imageId}/600/400`;
-          img.alt = `Image by ${data.author}`;
-          img.style.maxWidth = "100%";
 
           const text_container = document.createElement("div");
           text_container.classList.add("text-container");
@@ -99,7 +95,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const data = await fetchImageDetails(imageId);
       if (data) {
         const img = document.createElement("img");
-        img.src = `https://picsum.photos/id/${imageId}/600/400`;
+        img.src = `https://picsum.photos/id/${imageId}/300/200`;
         img.alt = `Image by ${data.author}`;
         img.style.maxWidth = "100%";
 
