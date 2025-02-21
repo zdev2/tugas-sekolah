@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   } else if (container2) {
     for (let i = 1; i <= numberOfItems2; i++) {
+      const imageId = i + 10;
       const textContainer = document.getElementById("box-container-gallery");
 
       if (imageId && textContainer) {
