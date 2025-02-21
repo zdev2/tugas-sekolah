@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       const img = document.createElement("img");
       img.classList.add("imgs");
-      img.src = `https://picsum.photos/id/${i + 50}/300/200`;
+      img.src = `https://picsum.photos/id/${i + 10}/300/200`;
       img.alt = "Random Image";
 
       const middle = document.createElement("div");
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       const img = document.createElement("img");
       img.classList.add("imgs");
-      img.src = `https://picsum.photos/id/${i + 50}/600/400`;
+      img.src = `https://picsum.photos/id/${i + 10}/600/400`;
       img.alt = "Random Image";
 
       const middle = document.createElement("div");
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   } else if (text_container) {
     const params = new URLSearchParams(window.location.search);
-    const imageId = parseInt(params.get("id"), 10) + 50;
+    const imageId = parseInt(params.get("id"), 10) + 10;
     const textContainer = document.getElementById("box-text-container");
 
     if (imageId && textContainer) {
