@@ -32,10 +32,28 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   } else if (container2) {
     for (let i = 1; i <= numberOfItems2; i++) {
-      const imageId = i + 10;
-      const textContainer = document.getElementById("box-container-gallery");
+      const box = document.createElement("a");
+      box.href = `https://zdev2.github.io/tugas-sekolah/picture-details.html?id=${i}`;
+      box.classList.add("box");
 
-      if (imageId && textContainer) {
+      const img = document.createElement("img");
+      img.classList.add("imgs");
+      img.src = `https://picsum.photos/id/${i + 10}/600/400`;
+      img.alt = "Random Image";
+
+      const middle = document.createElement("div");
+      middle.classList.add("middle");
+
+      const text = document.createElement("div");
+      text.classList.add("text");
+      text.textContent = `Image ${i}`;
+
+      const box2 = document.createElement("a");
+      box.classList.add("box");
+
+      const imageId = i + 10;
+
+      if (imageId && box2) {
         const data = await fetchImageDetails(imageId);
         if (data) {
           const img = document.createElement("img");
@@ -57,15 +75,20 @@ document.addEventListener("DOMContentLoaded", async function () {
           sourceLink.textContent = "View Original Source";
           sourceLink.target = "_blank";
 
-          textContainer.appendChild(img);
           text_container.appendChild(title);
           text_container.appendChild(dimensions);
           text_container.appendChild(sourceLink);
-          textContainer.appendChild(text_container);
+          box2.appendChild(text_container);
         } else {
-          textContainer.textContent = "Failed to load image details.";
+          box2.textContent = "Failed to load image details.";
         }
       }
+
+      middle.appendChild(text);
+      box.appendChild(img);
+      box.appendChild(middle);
+      container2.appendChild(box);
+      container2.appendChild(box2);
     }
   } else if (text_container) {
     const params = new URLSearchParams(window.location.search);
