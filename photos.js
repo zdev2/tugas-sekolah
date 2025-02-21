@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       const img = document.createElement("img");
       img.classList.add("imgs");
-      img.src = `https://picsum.photos/id/${i + 50}/300/200`;
+      img.src = `https://picsum.photos/id/${i + 10}/300/200`;
       img.alt = "Random Image";
 
       const middle = document.createElement("div");
@@ -32,30 +32,44 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   } else if (container2) {
     for (let i = 1; i <= numberOfItems2; i++) {
-      const box = document.createElement("a");
-      box.href = `https://zdev2.github.io/tugas-sekolah/picture-details.html?id=${i}`;
-      box.classList.add("box");
+      const imageId = i + 10;
+      const textContainer = document.getElementById("box-container-gallery");
 
-      const img = document.createElement("img");
-      img.classList.add("imgs");
-      img.src = `https://picsum.photos/id/${i + 50}/600/400`;
-      img.alt = "Random Image";
+      if (imageId && textContainer) {
+        const data = await fetchImageDetails(imageId);
+        if (data) {
+          const img = document.createElement("img");
+          img.src = `https://picsum.photos/id/${imageId}/600/400`;
+          img.alt = `Image by ${data.author}`;
+          img.style.maxWidth = "100%";
 
-      const middle = document.createElement("div");
-      middle.classList.add("middle");
+          const text_container = document.createElement("div");
+          text_container.classList.add("text-container");
 
-      const text = document.createElement("div");
-      text.classList.add("text");
-      text.textContent = `Image ${i}`;
+          const title = document.createElement("h2");
+          title.textContent = `Image by ${data.author}`;
 
-      middle.appendChild(text);
-      box.appendChild(img);
-      box.appendChild(middle);
-      container2.appendChild(box);
+          const dimensions = document.createElement("p");
+          dimensions.textContent = `Size: ${data.width} x ${data.height}`;
+
+          const sourceLink = document.createElement("a");
+          sourceLink.href = data.url;
+          sourceLink.textContent = "View Original Source";
+          sourceLink.target = "_blank";
+
+          textContainer.appendChild(img);
+          text_container.appendChild(title);
+          text_container.appendChild(dimensions);
+          text_container.appendChild(sourceLink);
+          textContainer.appendChild(text_container);
+        } else {
+          textContainer.textContent = "Failed to load image details.";
+        }
+      }
     }
   } else if (text_container) {
     const params = new URLSearchParams(window.location.search);
-    const imageId = parseInt(params.get("id"), 10) + 50;
+    const imageId = parseInt(params.get("id"), 10) + 10;
     const textContainer = document.getElementById("box-text-container");
 
     if (imageId && textContainer) {
