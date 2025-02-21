@@ -11,7 +11,7 @@ nav {
   top: 0;
   padding: 1rem;
   background-color: #0b80aa;
-  z-index: 20;
+  z-index: 200;
 }
 
 nav ul {
