@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const img = document.createElement("img");
       img.classList.add("imgs");
-      img.src = `https://picsum.photos/id/${i + 50}/600/400`;
+      img.src = `https://picsum.photos/id/${i + 50}/300/200`;
       img.alt = "Random Image";
 
       const middle = document.createElement("div");

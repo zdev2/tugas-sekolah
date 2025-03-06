@@ -43,7 +43,13 @@ nav ul li a {
 .box-container-gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 5px;
+  gap: 2rem;
+  margin: 0 4rem;
+}
+
+.pppp {
+  padding: 2rem 4rem;
+  text-align: center;
 }
 
 .box {
