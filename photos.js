@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const img = document.createElement("img");
       img.classList.add("imgs");
       img.src = `https://picsum.photos/id/${i + 10}/300/200`;
+      img.src = `https://picsum.photos/id/${i + 10}/300/200`;
       img.alt = "Random Image";
 
       const middle = document.createElement("div");
@@ -41,8 +42,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       img.src = `https://picsum.photos/id/${i + 10}/300/200`;
       img.alt = "Random Image";
 
-      const middle = document.createElement("div");
-      middle.classList.add("middle");
+          const text_container = document.createElement("div");
+          text_container.classList.add("text-container");
 
       const text = document.createElement("div");
       text.classList.add("text");
